@@ -1,0 +1,47 @@
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/']">
+            <img src="assets\_64aa27e8-db58-409a-85e2-f32cbc3b1a0e.jpg" alt="" width="30" height="30" class="d-inline-block align-text-top">
+            Aluminios Cardenas
+          </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['/inicio']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}"
+            ariaCurrentWhenActive="page">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/products']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}"
+            ariaCurrentWhenActive="page">Nuestros Productos</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Nosotros
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Quienes Somos</a></li>
+              <li><a class="dropdown-item" href="#">Misión</a></li>
+              <li><a class="dropdown-item" href="#">Visión</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}"
+            ariaCurrentWhenActive="page">Contáctenos</a>
+          </li>
+          <li *ngIf="!userLoginOn" class="nav-item">
+            <a class="nav-link" [routerLink]="['/iniciar-sesion']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}"
+            ariaCurrentWhenActive="page">Iniciar Sesión</a>
+          </li>
+          <li *ngIf="userLoginOn"  class="nav-item">
+            <a class="nav-link" [routerLink]="['/inicio']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}"
+            ariaCurrentWhenActive="page" (click)="logout()">Cerrar Sesión</a>
+          </li>   
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  

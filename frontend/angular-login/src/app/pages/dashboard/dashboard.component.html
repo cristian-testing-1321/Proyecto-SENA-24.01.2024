@@ -1,0 +1,36 @@
+<app-nav></app-nav>
+<p *ngIf="!userLoginOn" class="alert alert-danger">Usuario NO autenticado</p>
+<p *ngIf="userLoginOn" class="alert alert-success">Usuario Autenticado</p>
+
+<div class="card ">
+    <div class="card-header">
+        Datos Personales
+    </div>
+    <div class="card-body m-0">
+        <app-personal-details></app-personal-details>
+    </div>
+
+</div>
+
+
+<form [formGroup]="registerForm"> 
+  <div class="mb-3">
+    <label>Username</label>
+    <input type="text" class="form-control" formControlName="username">
+  </div>
+  <div class="mb-3">
+    <label>Nombre</label>
+    <input type="text" class="form-control" formControlName="firstname">
+  </div>
+  <div class="mb-3">
+    <label>Apellido</label>
+    <input type="text" class="form-control" formControlName="lastname">
+  </div>
+  <div class="mb-3">
+    <label>Password</label>
+    <input type="text" class="form-control" formControlName="password">
+  </div> 
+  <button type="submit" (click)="register()" class="btn btn-primary">Iniciar Sesión</button>
+</form>
+
+<div id="alert-container" class="fixed-top m-3"></div>
